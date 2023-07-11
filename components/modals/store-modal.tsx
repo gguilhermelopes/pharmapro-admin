@@ -53,8 +53,8 @@ const StoreModal = () => {
 
   return (
     <Modal
-      title="Create store"
-      description="Add a new store to manage products and categories"
+      title="Criar nova farmácia"
+      description="Adicione uma nova farmácia para gerenciar medicamentos e categorias."
       isOpen={storeModal.isOpen}
       onClose={storeModal.onClose}
     >
@@ -67,11 +67,11 @@ const StoreModal = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Nome</FormLabel>
                     <FormControl>
                       <Input
                         disabled={loading}
-                        placeholder="E-Commerce"
+                        placeholder="Nova farmácia"
                         {...field}
                       />
                     </FormControl>
@@ -85,10 +85,10 @@ const StoreModal = () => {
                   onClick={storeModal.onClose}
                   disabled={loading}
                 >
-                  Cancel
+                  Cancelar
                 </Button>
                 <Button disabled={loading} type="submit">
-                  Continue
+                  Continuar
                 </Button>
               </div>
             </form>
