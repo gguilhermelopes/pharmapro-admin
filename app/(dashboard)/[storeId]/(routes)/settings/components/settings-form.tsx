@@ -51,7 +51,12 @@ const SettingsForm: FC<SettingsFormProps> = ({ initialData }) => {
           title="Configurações"
           description="Gerencie as preferências de sua farmácia"
         />
-        <Button variant="destructive" size="icon" onClick={() => {}}>
+        <Button
+          disabled={loading}
+          variant="destructive"
+          size="icon"
+          onClick={() => setOpen(true)}
+        >
           <Trash className="h-4 w-4" />
         </Button>
       </div>
