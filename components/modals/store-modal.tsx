@@ -43,7 +43,7 @@ const StoreModal = () => {
       window.location.assign(`/${response.data.id}`);
     } catch (error) {
       toast.error(
-        "Something went wrong. Try again later or check your information."
+        "Algo deu errado. Por favor, tente novamente mais tarde ou verifique suas informações."
       );
     } finally {
       form.reset();

@@ -6,6 +6,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Trash } from "lucide-react";
+import { toast } from "react-hot-toast";
+import { useParams, useRouter } from "next/navigation";
+import axios from "axios";
 
 import Heading from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
@@ -39,9 +42,22 @@ const SettingsForm: FC<SettingsFormProps> = ({ initialData }) => {
     resolver: zodResolver(formSchema),
     defaultValues: initialData,
   });
+  const params = useParams();
+  const router = useRouter();
 
   const onSubmit = async (data: SettingsFormValues) => {
-    console.log(data);
+    try {
+      setLoading(true);
+      await axios.patch(`/api/stores/${params.storeId}`, data);
+      router.refresh();
+      toast.success("Configurações salvas.");
+    } catch (error) {
+      toast.error(
+        "Algo deu errado. Por favor, tente novamente mais tarde ou verifique suas informações."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
