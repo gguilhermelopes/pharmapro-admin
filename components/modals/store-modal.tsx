@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
   name: z.string().min(1, {
-    message: "Store name is required.",
+    message: "O nome da farmácia é obrigatório.",
   }),
 });
 
