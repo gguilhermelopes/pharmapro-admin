@@ -92,8 +92,8 @@ const BillboardForm: FC<BillboardFormProps> = ({ initialData }) => {
         `/api/${params.storeId}/billboards/${params.billboardId}`
       );
       router.refresh();
-      router.push("/");
-      toast.success("Farmácia deletada com sucesso.");
+      router.push(`/${params.storeId}/billboards`);
+      toast.success("Banner deletado com sucesso.");
     } catch (error) {
       toast.error(
         "É necessário remover todos as categorias do Banner para a sua exclusão."

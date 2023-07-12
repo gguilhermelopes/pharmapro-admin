@@ -25,8 +25,8 @@ const AlertModal: FC<AlertModalProps> = ({
 
   return (
     <Modal
-      title="Quer mesmo deletar a farmácia?"
-      description="Essa ação não poderá ser desfeita."
+      title="Quer mesmo fazer a exclusão?"
+      description="Cuidado! Essa ação não poderá ser desfeita."
       isOpen={isOpen}
       onClose={onClose}
     >

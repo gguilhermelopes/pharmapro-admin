@@ -19,14 +19,14 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
       icon: <Home className="w-5 h-5 fill-slate-50" />,
     },
     {
-      href: `/${params.storeId}/settings`,
-      label: "Configurações",
-      active: pathname === `/${params.storeId}/settings`,
-    },
-    {
       href: `/${params.storeId}/billboards`,
       label: "Banners",
       active: pathname === `/${params.storeId}/billboards`,
+    },
+    {
+      href: `/${params.storeId}/settings`,
+      label: "Configurações",
+      active: pathname === `/${params.storeId}/settings`,
     },
   ];
   return (
