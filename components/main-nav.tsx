@@ -1,16 +1,23 @@
 "use client";
 
+import { HTMLAttributes } from "react";
 import { useParams, usePathname } from "next/navigation";
+import { Home } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { HTMLAttributes } from "react";
 
 const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   const pathname = usePathname();
   const params = useParams();
 
   const routes = [
+    {
+      href: `/${params.storeId}`,
+      label: "Home",
+      active: pathname === `/${params.storeId}`,
+      icon: <Home className="w-5 h-5 fill-slate-50" />,
+    },
     {
       href: `/${params.storeId}/settings`,
       label: "Configurações",
@@ -24,12 +31,13 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
           key={route.href}
           href={route.href}
           className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
+            "flex items-center justify-center gap-2 text-sm font-medium transition-colors hover:text-primary",
             route.active
-              ? "text-black dark:text-white"
+              ? "text-black dark:text-white font-bold"
               : "text-muted-foreground"
           )}
         >
+          {route.icon && route.icon}
           {route.label}
         </Link>
       ))}
