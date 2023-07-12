@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import AlertModal from "@/components/modals/alert-modal";
-import useOrigin from "@/hooks/use-origin";
 import ImageUpload from "@/components/ui/image-upload";
 
 interface BillboardFormProps {
@@ -35,7 +34,7 @@ const formSchema = z.object({
     message: "A legenda do banner é obrigatória.",
   }),
   imageUrl: z.string().min(1, {
-    message: "A url da imagem do banner é obrigatória.",
+    message: "A imagem do banner é obrigatória.",
   }),
 });
 
@@ -75,6 +74,7 @@ const BillboardForm: FC<BillboardFormProps> = ({ initialData }) => {
         await axios.post(`/api/${params.storeId}/billboards`, data);
       }
       router.refresh();
+      router.push(`/${params.storeId}/billboards`);
       toast.success(toastMessage);
     } catch (error) {
       toast.error(
