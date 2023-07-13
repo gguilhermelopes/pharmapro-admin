@@ -31,7 +31,7 @@ const CellAction: FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
-    toast.success(`ID do ${data.label} copiado com sucesso`);
+    toast.success(`ID do banner copiado com sucesso`);
   };
 
   const onDelete = async () => {

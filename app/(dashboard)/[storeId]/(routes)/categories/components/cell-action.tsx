@@ -15,11 +15,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-import { BillboardColumn } from "./columns";
+import { CategoryColumn } from "./columns";
 import AlertModal from "@/components/modals/alert-modal";
 
 interface CellActionProps {
-  data: BillboardColumn;
+  data: CategoryColumn;
 }
 
 const CellAction: FC<CellActionProps> = ({ data }) => {
@@ -31,18 +31,18 @@ const CellAction: FC<CellActionProps> = ({ data }) => {
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
-    toast.success(`ID do ${data.label} copiado com sucesso`);
+    toast.success(`ID da categoria copiado com sucesso`);
   };
 
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
+      await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
       router.refresh();
-      toast.success("Banner deletado com sucesso.");
+      toast.success("Categoria deletada com sucesso.");
     } catch (error) {
       toast.error(
-        "É necessário remover todos as categorias do Banner para a sua exclusão."
+        "É necessário remover todos os produtos da categoria para a sua exclusão."
       );
     } finally {
       setLoading(false);
@@ -77,7 +77,7 @@ const CellAction: FC<CellActionProps> = ({ data }) => {
           <DropdownMenuItem
             className="cursor-pointer"
             onClick={() =>
-              router.push(`/${params.storeId}/billboards/${data.id}`)
+              router.push(`/${params.storeId}/categories/${data.id}`)
             }
           >
             <Edit className="mr-2 w-4 h-4" />
