@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import AlertModal from "@/components/modals/alert-modal";
 import ApiAlert from "@/components/ui/api-alert";
 import useOrigin from "@/hooks/use-origin";
+import ApiTitle from "@/components/ui/api-title";
 
 interface SettingsFormProps {
   initialData: Store;
@@ -137,6 +138,7 @@ const SettingsForm: FC<SettingsFormProps> = ({ initialData }) => {
         </form>
       </Form>
       <Separator />
+      <ApiTitle />
       <ApiAlert
         title="NEXT_PUBLIC_API_URL"
         description={`${origin}/api/${params.storeId}`}

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { Copy, Laptop2, Server } from "lucide-react";
+import { Copy, Server } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge, BadgeProps } from "@/components/ui/badge";
@@ -36,10 +36,6 @@ const ApiAlert: FC<ApiAlertProps> = ({
 
   return (
     <>
-      <div className="my-2 flex gap-2 items-center">
-        <h2 className="font-bold tracking-tighter">Para desenvolvedores</h2>
-        <Laptop2 className="w-5 h-5" />
-      </div>
       <Alert>
         <Server className="w-5 h-5" />
         <AlertTitle className="flex items-center gap-x-2">
