@@ -42,7 +42,7 @@ const CellAction: FC<CellActionProps> = ({ data }) => {
       toast.success("Banner deletado com sucesso.");
     } catch (error) {
       toast.error(
-        "É necessário remover todos as categorias do Banner para a sua exclusão."
+        "É necessário remover todas as categorias do Banner para a sua exclusão."
       );
     } finally {
       setLoading(false);
