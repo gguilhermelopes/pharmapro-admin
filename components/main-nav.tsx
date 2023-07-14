@@ -28,6 +28,11 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
       active: pathname === `/${params.storeId}/categories`,
     },
     {
+      href: `/${params.storeId}/manufacturers`,
+      label: "Fabricantes",
+      active: pathname === `/${params.storeId}/manufacturers`,
+    },
+    {
       href: `/${params.storeId}/settings`,
       label: "Configurações",
       active: pathname === `/${params.storeId}/settings`,
