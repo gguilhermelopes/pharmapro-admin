@@ -2,10 +2,11 @@
 
 import { HTMLAttributes } from "react";
 import { useParams, usePathname } from "next/navigation";
-import { Home } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import { Settings } from "lucide-react";
+import { AiFillSetting } from "react-icons/ai";
 
 const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   const pathname = usePathname();
@@ -13,9 +14,9 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
 
   const routes = [
     {
-      href: `/${params.storeId}`,
-      label: "Home",
-      active: pathname === `/${params.storeId}`,
+      href: `/${params.storeId}/products`,
+      label: "Produtos",
+      active: pathname === `/${params.storeId}/products`,
     },
     {
       href: `/${params.storeId}/billboards`,
@@ -36,6 +37,7 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
       href: `/${params.storeId}/settings`,
       label: "Configurações",
       active: pathname === `/${params.storeId}/settings`,
+      icon: <AiFillSetting className="w-5 h-5" />,
     },
   ];
   return (
@@ -51,7 +53,7 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
               : "text-muted-foreground"
           )}
         >
-          {route.label}
+          {route.icon ? route.icon : route.label}
         </Link>
       ))}
     </nav>
