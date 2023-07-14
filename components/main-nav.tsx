@@ -16,7 +16,6 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
       href: `/${params.storeId}`,
       label: "Home",
       active: pathname === `/${params.storeId}`,
-      icon: <Home className="w-5 h-5 fill-slate-50" />,
     },
     {
       href: `/${params.storeId}/billboards`,
@@ -47,7 +46,6 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
               : "text-muted-foreground"
           )}
         >
-          {route.icon && route.icon}
           {route.label}
         </Link>
       ))}
