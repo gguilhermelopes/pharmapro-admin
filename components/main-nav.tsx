@@ -34,6 +34,11 @@ const MainNav = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
       active: pathname === `/${params.storeId}/manufacturers`,
     },
     {
+      href: `/${params.storeId}/orders`,
+      label: "Pedidos",
+      active: pathname === `/${params.storeId}/orders`,
+    },
+    {
       href: `/${params.storeId}/settings`,
       label: "Configurações",
       active: pathname === `/${params.storeId}/settings`,
