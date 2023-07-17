@@ -33,7 +33,7 @@ const ProductClient: FC<ProductClientProps> = ({ data }) => {
         </Button>
       </div>
       <Separator />
-      <DataTable columns={columns} data={data} searchKey="label" />
+      <DataTable columns={columns} data={data} searchKey="name" />
       <ApiTitle />
       <ApiList entityName="products" entityIdName="productId" />
     </>

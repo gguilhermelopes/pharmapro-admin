@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
+import { ArrowUpDown, CheckCircle, CircleOff } from "lucide-react";
 import CellAction from "./cell-action";
 
 export type ProductColumn = {
@@ -46,10 +46,28 @@ export const columns: ColumnDef<ProductColumn>[] = [
   {
     accessorKey: "isArchived",
     header: "Arquivado",
+    cell: ({ row }) => (
+      <div className="flex items-center ms-6">
+        {row.original.isArchived ? (
+          <CheckCircle className="w-4 h-4 text-green-500" />
+        ) : (
+          <CircleOff className="w-4 h-4 text-red-600" />
+        )}
+      </div>
+    ),
   },
   {
     accessorKey: "isFeatured",
     header: "Promocional",
+    cell: ({ row }) => (
+      <div className="flex items-center ms-6">
+        {row.original.isFeatured ? (
+          <CheckCircle className="w-4 h-4 text-green-500" />
+        ) : (
+          <CircleOff className="w-4 h-4 text-red-600" />
+        )}
+      </div>
+    ),
   },
   {
     accessorKey: "createdAt",

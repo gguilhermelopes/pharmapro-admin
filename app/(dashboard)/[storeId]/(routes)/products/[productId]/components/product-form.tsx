@@ -60,9 +60,6 @@ const formSchema = z.object({
   }),
   isFeatured: z.boolean().default(false).optional(),
   isArchived: z.boolean().default(false).optional(),
-  imageUrl: z.string().min(1, {
-    message: "A imagem do banner é obrigatória.",
-  }),
 });
 
 type ProductFormValues = z.infer<typeof formSchema>;
