@@ -76,7 +76,7 @@ const SettingsForm: FC<SettingsFormProps> = ({ initialData }) => {
       toast.success("Farmácia deletada com sucesso.");
     } catch (error) {
       toast.error(
-        "É necessário remover todos os medicamentos e categorias da farmácia para a sua exclusão."
+        "É necessário remover todos os produtos e categorias da farmácia para a sua exclusão."
       );
     } finally {
       setLoading(false);
