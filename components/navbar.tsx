@@ -4,8 +4,8 @@ import { UserButton, auth } from "@clerk/nextjs";
 import MainNav from "@/components/main-nav";
 import prismadb from "@/lib/prismadb";
 import StoreSwitcher from "@/components/store-switcher";
-
-import HomeButton from "./home-button";
+import HomeButton from "@/components/home-button";
+import { ModeToggle } from "@/components/theme-toggle";
 
 const Navbar = async () => {
   const { userId } = auth();
@@ -25,6 +25,7 @@ const Navbar = async () => {
         <HomeButton />
         <div className="ml-auto flex items-center space-x-4">
           <MainNav className="mx-6" />
+          <ModeToggle />
           <UserButton afterSignOutUrl="/" />
         </div>
       </div>
