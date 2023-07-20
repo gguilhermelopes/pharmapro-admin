@@ -47,7 +47,7 @@ export const columns: ColumnDef<ProductColumn>[] = [
     accessorKey: "isArchived",
     header: "Arquivado",
     cell: ({ row }) => (
-      <div className="flex items-center ms-6">
+      <div className="flex items-center justify-center">
         {row.original.isArchived ? (
           <CheckCircle className="w-4 h-4 text-green-500" />
         ) : (

@@ -13,6 +13,7 @@ const corsHeaders = {
 export async function OPTIONS() {
   return NextResponse.json({}, { headers: corsHeaders });
 }
+
 export async function POST(
   req: Request,
   { params }: { params: { storeId: string } }
@@ -41,7 +42,7 @@ export async function POST(
         product_data: {
           name: product.name,
         },
-        unit_amount: product.price.toNumber() * 100,
+        unit_amount: +(product.price.toNumber() * 100).toFixed(),
       },
     });
   });
@@ -77,9 +78,7 @@ export async function POST(
   });
 
   return NextResponse.json(
-    {
-      url: session.url,
-    },
+    { url: session.url },
     {
       headers: corsHeaders,
     }

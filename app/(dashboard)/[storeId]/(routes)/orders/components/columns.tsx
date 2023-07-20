@@ -35,7 +35,7 @@ export const columns: ColumnDef<OrderColumn>[] = [
     accessorKey: "isPaid",
     header: "Pago",
     cell: ({ row }) => (
-      <div className="flex items-center ms-6">
+      <div className="flex items-center justify-center">
         {row.original.isPaid ? (
           <CheckCircle className="w-4 h-4 text-green-500" />
         ) : (
