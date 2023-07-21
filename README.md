@@ -31,7 +31,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o pharmaPro Admin , siga estas etapas:
 
 * Clone esse repositório com `git clone https://github.com/gguilhermelopes/pharmapro-admin`
-* Entre na pasta com `cd dogs`
+* Entre na pasta com `cd pharmapro-admin`
 * Instale as dependências com `npm install`
 * É necessário um arquivo de váriaveis de ambiente (.env) como no exemplo abaixo
 
