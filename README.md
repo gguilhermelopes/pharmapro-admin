@@ -15,7 +15,7 @@ Projeto concluído!
 
 - [x] Desenvolvimento de todo o projeto utilizando NextJS e Tailwind
 - [x] Criação e consumo de REST API
-- [x] Comunicação com a store do projeto [pharmaPro Store](https://github.com/gguilhermelopes/pharmapro-admin), gerenciando totalmente a loja em tempo real
+- [x] Comunicação com a store do projeto [pharmaPro Store](https://github.com/gguilhermelopes/pharmapro-store), gerenciando totalmente a loja em tempo real
 - [x] Utilização do shadcn-ui para os estilos, contando com modo escuro
 - [x] Implementação dos endpoints para a store, incluindo meio de pagamentos com Stripe
 - [x] Login e criação de usuários com Clerk
