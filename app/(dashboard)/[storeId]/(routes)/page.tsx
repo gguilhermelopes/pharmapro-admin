@@ -61,7 +61,7 @@ const DashboardPage: FC<DashboardPageProps> = async ({ params }) => {
             <CardContent>
               {ordersCount ? (
                 <div className="text-2xl font-bold">
-                  {((salesCount / ordersCount) * 100).toFixed(3)} %
+                  {((salesCount / ordersCount) * 100).toFixed()} %
                 </div>
               ) : (
                 <div className="text-2xl font-bold">Sem dados</div>
